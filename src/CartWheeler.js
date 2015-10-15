@@ -11,7 +11,6 @@ CartWheeler.prototype.step = function() {
   Dancer.prototype.step.call(this);
 
   this.rotate();
-  //call move
   this.move();
 };
 

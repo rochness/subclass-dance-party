@@ -34,7 +34,7 @@ $(document).ready(function() {
   $(".LineUpDancersButton").on('click', function(event) {
     var top = 100;
     for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].lineUp(top, 100);
+      window.dancers[i].lineUp(top);
       top += 50;
     }
   });
@@ -42,6 +42,9 @@ $(document).ready(function() {
   $(".danceFloor").click(function() {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].stopDancing = false;
+      //reposition dancers randomly
+      window.dancers[i].setPosition($("body").height() * Math.random(),
+      $("body").width() * Math.random());
       window.dancers[i].step();
     }
   });
