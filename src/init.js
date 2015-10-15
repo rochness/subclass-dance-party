@@ -48,5 +48,9 @@ $(document).ready(function() {
       window.dancers[i].step();
     }
   });
+
+  $(".BLOWMYMIND").click(function() {
+    $(".danceFloor").css("background-image", "url(blownMind.gif) no-repeat;");
+  });
 });
 

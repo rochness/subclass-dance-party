@@ -1,5 +1,5 @@
 var Dancer = function(top, left, timeBetweenSteps) {
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<span></span>');
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
@@ -16,10 +16,22 @@ Dancer.prototype.step = function() {
 };
 
 Dancer.prototype.setPosition = function(top, left) {
+  var currentWidth = this.$node.css('width');
+  var currentHeight = this.$node.css('height');
+  var ratio = top/$(".danceFloor").height() + 1;
+
+
+  //new height = (ratio) * old height
+  //higher top value = larger image
+
   var styleSettings = {
     top: top,
-    left: left
+    left: left,
+    width: (ratio * currentWidth).toString().concat('%'),
+    height: (ratio * currentHeight).toString().concat('%')
+
   };
+  
   this.$node.css(styleSettings);
 };
 
@@ -28,6 +40,7 @@ Dancer.prototype.lineUp = function(top) {
   this.top = top;
   this.left = 100;
   this.setPosition(this.top, this.left);
+  setTimeout(this.setPosition.bind(this, this.top, this.left), 500);
 };
 
 

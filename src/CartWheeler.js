@@ -1,5 +1,7 @@
 var CartWheeler = function(top, left, timeBetweenSteps) {
   FlippyDancer.apply(this, [top, left, timeBetweenSteps]);
+  this.$node.addClass("spongebob");
+  this.$node.removeClass("putin");
   this.$node.toggle();
   this.direction = "right";
 };

@@ -1,5 +1,6 @@
 var BouncyDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, [top, left, timeBetweenSteps]);
+  this.$node.addClass("thor");
   this.$node.toggle();
   this.hasMoved = false;
 };

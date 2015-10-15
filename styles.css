@@ -23,25 +23,80 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+.dancer_guy{
   /*border:10px solid red;
   border-radius:10px;*/
   /*display: block;*/
   position:absolute;
-  width: 200px;
-  height: 200px;
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  display: block;
   background-image: url("dancer_guy.gif");
   transition: transform 1s linear;
   /*transform: rotate(90deg);*/
 }
+.spongebob{
+  /*border:10px solid red;
+  border-radius:10px;*/
+  /*display: block;*/
+  position:absolute;
+  background-size: cover;
+  width: 500px;
+  height: 295px;
+  background-image: url("spongebob.gif");
+  transition: transform 1s linear;
+  /*transform: rotate(90deg);*/
+}
+.putin{
+  /*border:10px solid red;
+  border-radius:10px;*/
+  /*display: block;*/
+  position:absolute;
+  background-size: cover;
+  width: 230px;
+  height: 250px;
+  background-image: url("putin.gif");
+  transition: transform 1s linear;
+  /*transform: rotate(90deg);*/
+}
+.stickman{
+  /*border:10px solid red;
+  border-radius:10px;*/
+  /*display: block;*/
+  position:absolute;
+  background-size: cover;
+  width: 20%;
+  height: 35%;
+  background-image: url("stickman.gif");
+  transition: transform 1s linear;
+  /*transform: rotate(90deg);*/
+}
+.thor{
+  /*border:10px solid red;
+  border-radius:10px;*/
+  /*display: block;*/
+  position:absolute;
+  background-size: cover;
+  width: 450px;
+  height: 600px;
+  background-image: url("thor.gif");
+  transition: transform 1s linear;
+  /*transform: rotate(90deg);*/
+}
 .danceFloor{
-  background-image: url("dancefloor.jpg");
+  background-image: url("blownMind.gif");
   background-size: 100% 100%;
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.box-rotate {
+.rotate {
   transform: rotate(30deg);
+}
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }

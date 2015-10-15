@@ -1,6 +1,7 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
 
   Dancer.apply(this, [top, left, timeBetweenSteps]);
+  this.$node.addClass("stickman");
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);

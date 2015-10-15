@@ -1,5 +1,7 @@
 var SideStepDancer = function(top, left, timeBetweenSteps) {
   BouncyDancer.apply(this, [top, left, timeBetweenSteps]);
+  this.$node.removeClass("thor");
+  this.$node.addClass("dancer_guy");
   this.$node.toggle();
   //this.hasMoved = false;
 };
