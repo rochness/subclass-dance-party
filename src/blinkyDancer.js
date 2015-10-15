@@ -1,5 +1,5 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
-<<<<<<< HEAD
+
   Dancer.apply(this, [top, left, timeBetweenSteps]);
 };
 
