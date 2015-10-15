@@ -12,7 +12,6 @@ Dancer.prototype.step = function() {
   if (!this.stopDancing) {
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
   }
-  
 };
 
 Dancer.prototype.setPosition = function(top, left) {
@@ -38,11 +37,28 @@ Dancer.prototype.setPosition = function(top, left) {
 Dancer.prototype.lineUp = function(top) {
   this.stopDancing = true;
   this.top = top;
-  this.left = 100;
-  this.setPosition(this.top, this.left);
+  this.left = $(".danceFloor").width()/2;
+  //this.setPosition(this.top, this.left);
   setTimeout(this.setPosition.bind(this, this.top, this.left), 500);
 };
 
+
+Dancer.prototype.tackle = function(targetDancer) {
+  // debugger;
+  this.stopDancing = true;
+  targetDancer.stopDancing = true;
+  var tacklerWidth = this.$node.width();
+  var targetWidth = targetDancer.$node.width();
+
+  var tacklerNewLeft = ($('.danceFloor').width()/2) - ((tacklerWidth + targetWidth)/2) - tacklerWidth;
+  var targetNewLeft = tacklerNewLeft + tacklerWidth + tacklerWidth + targetWidth;
+
+  setTimeout(this.setPosition.bind(this, $('.danceFloor').height()/2, tacklerNewLeft), 500);
+  setTimeout(targetDancer.setPosition.bind(targetDancer, $('.danceFloor').height()/2, targetNewLeft), 500);
+  // this.setPosition.apply(this, ($('.danceFloor').height()/2, tacklerNewLeft));
+  // targetDancer.setPosition($('.danceFloor').height()/2, targetNewLeft);
+  // left postion of this.$node = dancefloor width/2 - total width 
+};
 
 // // Creates and returns a new dancer object that can step
 // var makeDancer = function(top, left, timeBetweenSteps) {

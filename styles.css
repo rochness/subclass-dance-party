@@ -45,7 +45,7 @@ body, a:link, a:visited, a:active{
   width: 500px;
   height: 295px;
   background-image: url("spongebob.gif");
-  transition: transform 1s linear;
+  transition: top 2s, left 2s, transform 2s linear;
   /*transform: rotate(90deg);*/
 }
 .putin{
@@ -57,7 +57,7 @@ body, a:link, a:visited, a:active{
   width: 230px;
   height: 250px;
   background-image: url("putin.gif");
-  transition: transform 1s linear;
+  transition: top 2s, left 2s, transform 1s linear;
   /*transform: rotate(90deg);*/
 }
 .stickman{
@@ -69,7 +69,7 @@ body, a:link, a:visited, a:active{
   width: 20%;
   height: 35%;
   background-image: url("stickman.gif");
-  transition: transform 1s linear;
+  transition: top 2s, left 2s, transform 1s linear;
   /*transform: rotate(90deg);*/
 }
 .thor{
@@ -78,14 +78,14 @@ body, a:link, a:visited, a:active{
   /*display: block;*/
   position:absolute;
   background-size: cover;
-  width: 450px;
-  height: 600px;
+  width: 150px;
+  height: 250px;
   background-image: url("thor.gif");
-  transition: transform 1s linear;
+  transition: top 2s, left 2s, transform 1s linear;
   /*transform: rotate(90deg);*/
 }
 .danceFloor{
-  background-image: url("blownMind.gif");
+  background-image: url("dancefloor.jpg");
   background-size: 100% 100%;
   display: block;
   width: 100%;

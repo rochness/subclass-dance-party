@@ -49,8 +49,31 @@ $(document).ready(function() {
     }
   });
 
-  $(".BLOWMYMIND").click(function() {
-    $(".danceFloor").css("background-image", "url(blownMind.gif) no-repeat;");
+  $(".danceBattleButton").click(function() {
+    var topStart = 100;
+    for(var i = 0; i < window.dancers.length-1; i+=2){
+      //i and i+1 to have same top value
+      //left value of i should be 300
+      //left value of i+1 should be danceFloor.width()-300
+      setTimeout(window.dancers[i].setPosition.bind(window.dancers[i], topStart, 300),500);
+      setTimeout(window.dancers[i+1].setPosition.bind(window.dancers[i+1], topStart, $(".danceFloor").width()-300),500);
+
+      topStart+=350;
+      //window.dancers[i].tackle(window.dancers[i+1]);  
+    }
+    //if()
+    
   });
+
+  $(".BLOWMYMIND").click(function() {
+    //window.dancers[0].tackle(window.dancers[1]);
+    if($(".danceFloor").hasClass("normal")){
+      $(".danceFloor").removeClass("normal");
+      $(".danceFloor").css("background-image", "url('blownMind.gif')");
+    } else {
+      $(".danceFloor").addClass("normal");
+      $(".danceFloor").css("background-image", "url('dancefloor.jpg')");
+    }
+   });
 });
 

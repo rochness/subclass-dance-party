@@ -12,11 +12,11 @@ BouncyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   //BouncyDancer.prototype.setPosition.apply(this, [this.top+200, this.left]);
   if (this.hasMoved) {
-    this.top += 50;
+    this.top += 70;
     this.setPosition(this.top, this.left);
     this.hasMoved = false;
   } else {
-    this.top -= 50;
+    this.top -= 70;
     this.setPosition(this.top, this.left);
     this.hasMoved = true;
   }
