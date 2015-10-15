@@ -3,7 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("dancefloor.jpg");
+  /*background-color: white;*/
+  /*background-image: url("dancer_guy.gif");*/
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +23,11 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  /*border:10px solid red;
+  border-radius:10px;*/
+  /*display: block;*/
   position:absolute;
+  width: 500px;
+  height: 500px;
+  background-image: url("dancer_guy.gif");
 }
