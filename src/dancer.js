@@ -34,10 +34,10 @@ Dancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-Dancer.prototype.lineUp = function(top) {
+Dancer.prototype.lineUp = function(top, left) {
   this.stopDancing = true;
   this.top = top;
-  this.left = $(".danceFloor").width()/2;
+  this.left = left || $(".danceFloor").width()/2;
   //this.setPosition(this.top, this.left);
   setTimeout(this.setPosition.bind(this, this.top, this.left), 500);
 };
@@ -59,6 +59,8 @@ Dancer.prototype.tackle = function(targetDancer) {
   // targetDancer.setPosition($('.danceFloor').height()/2, targetNewLeft);
   // left postion of this.$node = dancefloor width/2 - total width 
 };
+
+
 
 // // Creates and returns a new dancer object that can step
 // var makeDancer = function(top, left, timeBetweenSteps) {

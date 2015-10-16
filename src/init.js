@@ -51,18 +51,32 @@ $(document).ready(function() {
 
   $(".danceBattleButton").click(function() {
     var topStart = 100;
-    for(var i = 0; i < window.dancers.length-1; i+=2){
+
+    var tackler1;
+    var tackler2;
+
+    for(var i = 0; i < window.dancers.length-1; i += 2){
       //i and i+1 to have same top value
       //left value of i should be 300
       //left value of i+1 should be danceFloor.width()-300
-      setTimeout(window.dancers[i].setPosition.bind(window.dancers[i], topStart, 300),500);
-      setTimeout(window.dancers[i+1].setPosition.bind(window.dancers[i+1], topStart, $(".danceFloor").width()-300),500);
+      // window.dancers[i].stopDancing = true;
+      // window.dancers[i+1].stopDancing = true;
+      window.dancers[i].lineUp(topStart, 100);
+      window.dancers[i+1].lineUp(topStart, $(".danceFloor").width()-300);
 
-      topStart+=350;
-      //window.dancers[i].tackle(window.dancers[i+1]);  
+      // setTimeout(window.dancers[i].setPosition.bind(window.dancers[i], topStart, 300),500);
+      // setTimeout(window.dancers[i+1].setPosition.bind(window.dancers[i+1], topStart, $(".danceFloor").width()-300),500);
+      topStart+=100;
+      
+      console.log('window.dancers[i] before mouseOver', window.dancers[i]);
+      tackler1 = window.dancers[i];
+      tackler2 = window.dancers[i+1];
+      console.log('tackler1 before mouseover', tackler1);
+      console.log('tackler2 before mouseover', tackler2);
+
+      window.dancers[i].$node.mouseover(window.dancers[i].tackle.bind(window.dancers[i], tackler2));
+      window.dancers[i+1].$node.mouseover(window.dancers[i+1].tackle.bind(window.dancers[i+1], tackler1));
     }
-    //if()
-    
   });
 
   $(".BLOWMYMIND").click(function() {
